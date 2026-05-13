@@ -194,24 +194,42 @@ export default function HomePage() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.badge}>npm install questify</div>
+
           <h1 className={styles.heroTitle}>
             The headless questionnaire
             <br />
             engine for the web.
           </h1>
+
           <p className={styles.heroSub}>
-            A zero-dependency state machine that handles multi-step forms, compound
-            conditional logic, and validation — in React, Vue, or plain JavaScript.
-            Used in the demo below to power a real health insurance intake form.
+            A zero-dependency state machine for multi-step forms, compound conditional
+            logic, and per-type validation. Works with React, Vue, or plain JavaScript.
+            Headless by design — you bring the components.
           </p>
+
+          {/* Credibility stats */}
+          <div className={styles.statsPills}>
+            <span className={styles.statsPill}>v1.0.0</span>
+            <span className={styles.statsDivider}>·</span>
+            <span className={styles.statsPill}>~2 KB gzip</span>
+            <span className={styles.statsDivider}>·</span>
+            <span className={styles.statsPill}>TypeScript</span>
+            <span className={styles.statsDivider}>·</span>
+            <span className={styles.statsPill}>MIT</span>
+          </div>
+
+          {/* Primary CTA + secondary links */}
           <div className={styles.heroCtas}>
+            <a href="#demos" className={styles.ctaPrimary}>
+              See it in action →
+            </a>
             <a
               href="https://github.com/ashishcumar/questify"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.ctaSecondary}
             >
-              GitHub →
+              GitHub
             </a>
             <a
               href="https://npmjs.com/package/questify"
@@ -219,14 +237,14 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className={styles.ctaSecondary}
             >
-              npm →
+              npm
             </a>
           </div>
         </div>
       </section>
 
       {/* Mode: all — Accordion demo */}
-      <section className={styles.demoSection}>
+      <section id="demos" className={styles.demoSection}>
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>mode: &quot;all&quot; · Accordion layout</div>
           <h2 className={styles.sectionTitle}>Insurance quote — accordion form</h2>
