@@ -1,0 +1,62 @@
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 32px 20px;
+  margin-top: 64px;
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tool {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--surface);
+  transition: all 0.15s;
+}
+.tool:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+.toolEmoji { font-size: 1rem; line-height: 1; }
+
+.copy {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  text-align: center;
+}
+.copy a {
+  color: var(--accent);
+  font-weight: 500;
+}
+.copy a:hover { text-decoration: underline; }

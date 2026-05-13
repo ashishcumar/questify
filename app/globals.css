@@ -1,0 +1,85 @@
+/* ── Light mode tokens ───────────────────────────────────────────────────── */
+:root {
+  --accent:        #6366f1;
+  --accent-dark:   #4f46e5;
+  --accent-light:  #eef2ff;
+  --accent-ring:   rgba(99, 102, 241, 0.25);
+
+  --bg:            #f8f9fb;
+  --surface:       #ffffff;
+  --surface-2:     #f3f4f6;
+  --border:        #e5e7eb;
+  --border-strong: #d1d5db;
+
+  --text:          #0f172a;
+  --text-2:        #475569;
+  --text-3:        #94a3b8;
+
+  --success:       #16a34a;
+  --error:         #dc2626;
+
+  --radius-sm:     6px;
+  --radius:        10px;
+  --radius-lg:     16px;
+
+  --shadow-sm:     0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow:        0 4px 16px rgba(0,0,0,.08);
+  --shadow-lg:     0 8px 32px rgba(0,0,0,.12);
+}
+
+/* ── Dark mode tokens ────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent:        #818cf8;
+    --accent-dark:   #6366f1;
+    --accent-light:  rgba(99, 102, 241, 0.15);
+    --accent-ring:   rgba(129, 140, 248, 0.3);
+
+    --bg:            #0f172a;
+    --surface:       #1e293b;
+    --surface-2:     #334155;
+    --border:        #334155;
+    --border-strong: #475569;
+
+    --text:          #f1f5f9;
+    --text-2:        #94a3b8;
+    --text-3:        #64748b;
+
+    --success:       #4ade80;
+    --error:         #f87171;
+
+    --shadow-sm:     0 1px 3px rgba(0,0,0,.3), 0 1px 2px rgba(0,0,0,.2);
+    --shadow:        0 4px 16px rgba(0,0,0,.4);
+    --shadow-lg:     0 8px 32px rgba(0,0,0,.5);
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+/* [H-6] Disable smooth scroll for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font: inherit; border: none; background: none; }
+input, textarea { font: inherit; }
+
+/* Global screen-reader utility — available to all components */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
