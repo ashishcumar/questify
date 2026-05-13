@@ -39,16 +39,27 @@ function evaluateSimple(
   }
 }
 
-function evaluateRule(rule: ShowIfRule, responses: Record<string, unknown>): boolean {
+// Maximum nesting depth for showIf condition trees.
+// Guards against stack overflows from accidentally deep or circular configs.
+const MAX_CONDITION_DEPTH = 20;
+
+function evaluateRule(
+  rule: ShowIfRule,
+  responses: Record<string, unknown>,
+  depth = 0
+): boolean {
+  if (depth > MAX_CONDITION_DEPTH) {
+    // Tree too deep — default to visible so questions don't silently disappear.
+    console.warn("[questify] showIf condition tree exceeds maximum depth. Defaulting to visible.");
+    return true;
+  }
   if ("and" in rule && rule.and) {
-    // Empty AND → no constraints → visible (consistent with logical identity)
     if (rule.and.length === 0) return true;
-    return rule.and.every((r) => evaluateRule(r, responses));
+    return rule.and.every((r) => evaluateRule(r, responses, depth + 1));
   }
   if ("or" in rule && rule.or) {
-    // Empty OR → no conditions met → hidden
     if (rule.or.length === 0) return false;
-    return rule.or.some((r) => evaluateRule(r, responses));
+    return rule.or.some((r) => evaluateRule(r, responses, depth + 1));
   }
   return evaluateSimple(rule as ShowIfCondition, responses);
 }
@@ -181,6 +192,10 @@ function buildState(
 
 // ─── Questionnaire class ──────────────────────────────────────────────────────
 
+// Keys that must never become property names on a plain object.
+// Guards against prototype pollution via developer-supplied question IDs.
+const UNSAFE_KEYS = new Set(["__proto__", "constructor", "prototype"]);
+
 type Subscriber = (state: QuestionnaireState) => void;
 
 export class Questionnaire {
@@ -276,6 +291,8 @@ export class Questionnaire {
   }
 
   private _setAnswer(question: Question, value: unknown): void {
+    // Guard against prototype pollution — unsafe IDs are silently ignored.
+    if (UNSAFE_KEYS.has(question.id)) return;
     this.responses = { ...this.responses, [question.id]: value };
 
     const error = validateAnswer(question, value);

@@ -92,14 +92,24 @@ function evaluateSimple(condition: ShowIfCondition, responses: Record<string, un
   }
 }
 
-function evaluateRule(rule: ShowIfRule, responses: Record<string, unknown>): boolean {
+const MAX_CONDITION_DEPTH = 20;
+
+function evaluateRule(
+  rule: ShowIfRule,
+  responses: Record<string, unknown>,
+  depth = 0
+): boolean {
+  if (depth > MAX_CONDITION_DEPTH) {
+    console.warn("[questify] showIf condition tree exceeds maximum depth. Defaulting to visible.");
+    return true;
+  }
   if ("and" in rule && rule.and) {
     if (rule.and.length === 0) return true;
-    return rule.and.every((r) => evaluateRule(r, responses));
+    return rule.and.every((r) => evaluateRule(r, responses, depth + 1));
   }
   if ("or" in rule && rule.or) {
     if (rule.or.length === 0) return false;
-    return rule.or.some((r) => evaluateRule(r, responses));
+    return rule.or.some((r) => evaluateRule(r, responses, depth + 1));
   }
   return evaluateSimple(rule as ShowIfCondition, responses);
 }
@@ -207,6 +217,8 @@ function buildState(
 
 // ─── Questionnaire class ──────────────────────────────────────────────────────
 
+const UNSAFE_KEYS = new Set(["__proto__", "constructor", "prototype"]);
+
 type Subscriber = (state: QuestionnaireState) => void;
 
 export class Questionnaire {
@@ -265,6 +277,7 @@ export class Questionnaire {
   }
 
   private _setAnswer(question: Question, value: unknown): void {
+    if (UNSAFE_KEYS.has(question.id)) return;
     this.responses = { ...this.responses, [question.id]: value };
     const error = validateAnswer(question, value);
     if (error) {
