@@ -2,9 +2,9 @@
 
 **Headless, zero-dependency questionnaire engine.** Works with React, Vue, or plain JavaScript — you own every pixel.
 
-[![npm version](https://img.shields.io/npm/v/questify?style=flat-square)](https://npmjs.com/package/questify)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/questify?style=flat-square)](https://bundlephobia.com/package/questify)
-[![license](https://img.shields.io/npm/l/questify?style=flat-square)](./package/LICENSE)
+[![npm version](https://img.shields.io/npm/v/%40questify%2Fcore?style=flat-square)](https://npmjs.com/package/@questify/core)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/%40questify%2Fcore?style=flat-square)](https://bundlephobia.com/package/@questify/core)
+[![license](https://img.shields.io/npm/l/%40questify%2Fcore?style=flat-square)](./package/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-blue?style=flat-square)](./package/src)
 
 **Live playground → [questify.renderlog.in](https://questify.renderlog.in)**
@@ -49,11 +49,11 @@ questify/
 ## Install
 
 ```bash
-npm install questify
+npm install @questify/core
 # or
-pnpm add questify
+pnpm add @questify/core
 # or
-yarn add questify
+yarn add @questify/core
 ```
 
 ---
@@ -63,7 +63,7 @@ yarn add questify
 ### React
 
 ```tsx
-import { useQuestionnaire } from 'questify/react';
+import { useQuestionnaire } from '@questify/core/react';
 
 const questions = [
   { id: 'name',   text: "What's your name?",  type: 'text',   required: true },
@@ -107,7 +107,7 @@ function Survey() {
 
 ```vue
 <script setup lang="ts">
-import { useQuestionnaire } from 'questify/vue';
+import { useQuestionnaire } from '@questify/core/vue';
 const { question, answer, next, back, progress, isComplete } =
   useQuestionnaire({ questions });
 </script>
@@ -126,7 +126,7 @@ const { question, answer, next, back, progress, isComplete } =
 ### Vanilla JS / Node
 
 ```ts
-import { Questionnaire } from 'questify';
+import { Questionnaire } from '@questify/core';
 
 const q = new Questionnaire({ questions });
 
@@ -297,7 +297,7 @@ const {
 Identical API to the React hook, but returns Vue `ref`/`computed` values:
 
 ```ts
-import { useQuestionnaire } from 'questify/vue';
+import { useQuestionnaire } from '@questify/core/vue';
 
 const {
   question,        // ComputedRef<Question | null>
@@ -324,7 +324,7 @@ Subscription is automatically cleaned up via `onUnmounted`.
 ## Vanilla JS class — `Questionnaire`
 
 ```ts
-import { Questionnaire } from 'questify';
+import { Questionnaire } from '@questify/core';
 
 const q = new Questionnaire({ questions, mode: 'step' });
 

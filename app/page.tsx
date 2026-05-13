@@ -37,9 +37,9 @@ const FEATURES = [
 ];
 
 const SNIPPETS = {
-  install: `npm install questify`,
+  install: `npm install @questify/core`,
 
-  react: `import { useQuestionnaire } from 'questify/react';
+  react: `import { useQuestionnaire } from '@questify/core/react';
 
 const questions = [
   {
@@ -103,7 +103,7 @@ export function HealthForm() {
   );
 }`,
 
-  vue: `import { useQuestionnaire } from 'questify/vue';
+  vue: `import { useQuestionnaire } from '@questify/core/vue';
 
 // In your <script setup>
 const {
@@ -112,7 +112,7 @@ const {
   answer, next, back, reset,
 } = useQuestionnaire({ questions });`,
 
-  vanilla: `import { Questionnaire } from 'questify';
+  vanilla: `import { Questionnaire } from '@questify/core';
 
 const q = new Questionnaire({ questions });
 
@@ -193,7 +193,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.badge}>npm install questify</div>
+          <div className={styles.badge}>npm install @questify/core</div>
 
           <h1 className={styles.heroTitle}>
             The headless questionnaire

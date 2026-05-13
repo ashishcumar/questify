@@ -2,9 +2,9 @@
 
 **Headless, zero-dependency questionnaire engine for the web.**
 
-[![npm version](https://img.shields.io/npm/v/questify?style=flat-square)](https://npmjs.com/package/questify)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/questify?style=flat-square)](https://bundlephobia.com/package/questify)
-[![license](https://img.shields.io/npm/l/questify?style=flat-square)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/%40questify%2Fcore?style=flat-square)](https://npmjs.com/package/@questify/core)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/%40questify%2Fcore?style=flat-square)](https://bundlephobia.com/package/@questify/core)
+[![license](https://img.shields.io/npm/l/%40questify%2Fcore?style=flat-square)](./LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-blue?style=flat-square)](./src)
 
 **Live demo → [questify.renderlog.in](https://questify.renderlog.in)**
@@ -18,13 +18,13 @@ Framework adapters for React and Vue are included.
 ## Install
 
 ```bash
-npm install questify
+npm install @questify/core
 ```
 
 ## React
 
 ```tsx
-import { useQuestionnaire } from 'questify/react';
+import { useQuestionnaire } from '@questify/core/react';
 
 const questions = [
   { id: 'name',   text: "What's your name?",  type: 'text',   required: true },
@@ -67,7 +67,7 @@ function Survey() {
 
 ```vue
 <script setup lang="ts">
-import { useQuestionnaire } from 'questify/vue';
+import { useQuestionnaire } from '@questify/core/vue';
 const { question, answer, next, back, progress, isComplete } =
   useQuestionnaire({ questions });
 </script>
@@ -86,7 +86,7 @@ const { question, answer, next, back, progress, isComplete } =
 ## Vanilla JS
 
 ```ts
-import { Questionnaire } from 'questify';
+import { Questionnaire } from '@questify/core';
 
 const q = new Questionnaire({ questions });
 
