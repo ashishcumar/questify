@@ -247,27 +247,28 @@ export default function HomePage() {
       <section id="demos" className={styles.demoSection}>
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>mode: &quot;all&quot; · Accordion layout</div>
-          <h2 className={styles.sectionTitle}>Insurance quote — accordion form</h2>
+          <h2 className={styles.sectionTitle}>Conditional form — accordion mode</h2>
           <p className={styles.sectionSub}>
-            All questions rendered at once. Click an accordion item to expand it, pick
-            an answer, and watch follow-up questions appear <strong>inline below</strong>{" "}
-            — recursively. Each <span className={styles.forkBadge}>⤷</span> icon marks a
-            conditional question. The list updates in real-time with no rerenders of
-            sibling questions.
+            All questions rendered at once in a collapsible list. Expand any field to
+            answer it — conditional follow-ups appear{" "}
+            <strong>inline below immediately</strong>, no rerenders of sibling questions.
+            Each <span className={styles.forkBadge}>⤷</span> marks a question that
+            only appears when its condition is met.
           </p>
           <AccordionDemoSection />
         </div>
       </section>
 
-      {/* Mode: step — Health insurance demo */}
+      {/* Mode: step — Branching wizard demo */}
       <section className={`${styles.demoSection} ${styles.demoSectionAlt}`}>
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>mode: &quot;step&quot; · One question at a time</div>
-          <h2 className={styles.sectionTitle}>Health insurance intake — step form</h2>
+          <h2 className={styles.sectionTitle}>Branching wizard — step-by-step</h2>
           <p className={styles.sectionSub}>
-            23 questions total, but most applicants see 10–15 depending on their path.{" "}
-            <strong>Try selecting diabetes + BMI above 30</strong> to trigger a compound
-            AND condition, or smoking + heart disease to unlock the specialist referral gate.
+            Dozens of questions — but the form adapts in real time.
+            Most users see fewer than half, depending on their answers.{" "}
+            <strong>Try different selections</strong> to watch branches appear and
+            disappear, compound AND conditions trigger, and progress update live.
           </p>
           <QuestionnaireDemo />
         </div>
