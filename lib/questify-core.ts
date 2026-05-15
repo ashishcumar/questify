@@ -1,4 +1,4 @@
-// Inlined from the questify npm package — swap with `import { ... } from 'questify'` once published.
+// Inlined from @questify/core — swap with `import { ... } from '@questify/core'` once published.
 
 export type QuestionType =
   | "text"

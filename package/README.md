@@ -1,8 +1,8 @@
-# questify
+# @questify/core
 
-**Headless, zero-dependency questionnaire engine for the web.**
+**Questify** — headless, zero-dependency questionnaire engine for the web.
 
-[![npm version](https://img.shields.io/npm/v/%40questify%2Fcore?style=flat-square)](https://npmjs.com/package/@questify/core)
+[![npm version](https://img.shields.io/npm/v/%40questify%2Fcore?style=flat-square)](https://www.npmjs.com/package/@questify/core)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/%40questify%2Fcore?style=flat-square)](https://bundlephobia.com/package/@questify/core)
 [![license](https://img.shields.io/npm/l/%40questify%2Fcore?style=flat-square)](./LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-blue?style=flat-square)](./src)
@@ -11,7 +11,7 @@
 
 ---
 
-questify is a pure TypeScript state machine for multi-step forms and surveys.
+This package is a pure TypeScript state machine for multi-step forms and surveys.
 It ships **zero runtime dependencies** and **zero UI** — you control every pixel.
 Framework adapters for React and Vue are included.
 
@@ -168,6 +168,21 @@ Operators: `eq` · `neq` · `gt` · `lt` · `gte` · `lte` · `includes`
 - `email` format — always validated automatically for `type: "email"`
 - `date` format — `YYYY-MM-DD` enforced automatically for `type: "date"`
 - `number` — rejects `NaN` and `±Infinity`
+
+## More tools by [Renderlog](https://renderlog.in)
+
+Sister tools from the same ecosystem (icons are each app’s `favicon.svg`, vendored under `assets/tool-icons/` for this readme):
+
+| | Tool | Link |
+|:-:|---|---|
+| <img src="./assets/tool-icons/calc.svg" width="20" height="20" alt="" /> | **Calc** | [calc.renderlog.in](https://calc.renderlog.in) |
+| <img src="./assets/tool-icons/pdf.svg" width="20" height="20" alt="" /> | **PDF** | [pdf.renderlog.in](https://pdf.renderlog.in) |
+| <img src="./assets/tool-icons/image.svg" width="20" height="20" alt="" /> | **Image** | [image.renderlog.in](https://image.renderlog.in) |
+| <img src="./assets/tool-icons/json.svg" width="20" height="20" alt="" /> | **JSON** | [json.renderlog.in](https://json.renderlog.in) |
+| <img src="./assets/tool-icons/text.svg" width="20" height="20" alt="" /> | **Text** | [text.renderlog.in](https://text.renderlog.in) |
+| <img src="./assets/tool-icons/notepad.svg" width="20" height="20" alt="" /> | **Notepad** | [notepad.renderlog.in](https://notepad.renderlog.in) |
+| <img src="./assets/tool-icons/qr.svg" width="20" height="20" alt="" /> | **QR** | [qr.renderlog.in](https://qr.renderlog.in) |
+| <img src="./assets/tool-icons/renderlog.svg" width="20" height="20" alt="" /> | **Renderlog** | [renderlog.in](https://renderlog.in) |
 
 ## License
 

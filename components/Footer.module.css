@@ -48,7 +48,11 @@
   background: var(--accent-light);
 }
 
-.toolEmoji { font-size: 1rem; line-height: 1; }
+.toolIcon {
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+}
 
 .copy {
   font-size: 0.78rem;

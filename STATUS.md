@@ -159,7 +159,7 @@ Questify is a headless, zero-dependency questionnaire engine for React, Vue, and
 ### 🟢 Post-launch (nice to have)
 - [ ] Add GitHub repo topics: `questionnaire`, `form`, `headless`, `react`, `vue`, `typescript`
 - [ ] Tweet / post about the launch with the demo link
-- [ ] If published as `@questify/core`, update demo page install snippet once `questify` name is approved
+- [x] Demo site, SEO metadata, and READMEs aligned on **`@questify/core`** (install snippets, npm URLs, JSON-LD). Unscoped `questify` remains blocked on npm; org scope is the publish path.
 - [ ] Consider adding a `CHANGELOG.md` before future releases
 - [ ] Add unit tests for core validation and conditional logic edge cases
 

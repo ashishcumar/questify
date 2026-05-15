@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Questify — Headless Questionnaire Engine",
     short_name: "Questify",
     description:
-      "Zero-dependency questionnaire engine for React, Vue, and vanilla JS.",
+      "Zero-dependency questionnaire engine for React, Vue, and vanilla JS. Published as @questify/core.",
     start_url: "/",
     display: "standalone",
     orientation: "portrait",

@@ -95,7 +95,7 @@ export default function OGImage() {
             marginBottom: 20,
           }}
         >
-          questify
+          Questify
         </div>
 
         {/* Tagline */}

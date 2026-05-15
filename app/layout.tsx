@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "headless form", "react hook form", "vue composable",
     "conditional logic", "branching form", "form wizard",
     "dynamic form", "typescript form", "step form",
-    "questify", "form state machine",
+    "questify", "@questify/core", "form state machine",
   ],
 
   authors: [
@@ -56,6 +56,11 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
 
+  // Google Search Console — questify.renderlog.in
+  verification: {
+    google: "VedcfuPi4JbCHqDA5YI6n_HNco0ZWeSCKfAon3LUPBM",
+  },
+
   // ── Open Graph ──────────────────────────────────────────────────────────────
   openGraph: {
     type: "website",
@@ -63,7 +68,7 @@ export const metadata: Metadata = {
     siteName: "Questify",
     title: "Questify — Headless Questionnaire Engine",
     description:
-      "Zero-dependency questionnaire engine for React, Vue, and vanilla JS. Bring your own UI — questify handles state, branching, and validation.",
+      "Zero-dependency questionnaire engine for React, Vue, and vanilla JS. Bring your own UI — Questify handles state, branching, and validation.",
     images: [
       {
         url: "/opengraph-image",
@@ -102,14 +107,14 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "questify",
+    name: "@questify/core",
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Any",
     description:
       "Zero-dependency headless questionnaire state machine for React, Vue, and vanilla JS.",
     url: BASE_URL,
-    downloadUrl: "https://npmjs.com/package/questify",
-    softwareVersion: "1.0.0",
+    downloadUrl: "https://www.npmjs.com/package/@questify/core",
+    softwareVersion: "1.0.1",
     license: "https://opensource.org/licenses/MIT",
     programmingLanguage: "TypeScript",
     codeRepository: "https://github.com/ashishcumar/questify",

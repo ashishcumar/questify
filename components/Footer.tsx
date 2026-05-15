@@ -1,14 +1,14 @@
 import styles from "./Footer.module.css";
 
 const TOOLS = [
-  { name: "Calc",     href: "https://calc.renderlog.in",     emoji: "🧮" },
-  { name: "PDF",      href: "https://pdf.renderlog.in",      emoji: "📄" },
-  { name: "Image",    href: "https://image.renderlog.in",    emoji: "🖼️" },
-  { name: "JSON",     href: "https://json.renderlog.in",     emoji: "📦" },
-  { name: "Text",     href: "https://text.renderlog.in",     emoji: "📝" },
-  { name: "Notepad",  href: "https://notepad.renderlog.in",  emoji: "🗒️" },
-  { name: "QR",       href: "https://qr.renderlog.in",       emoji: "◼️" },
-  { name: "Renderlog",href: "https://renderlog.in",          emoji: "🌐" },
+  { name: "Calc",     href: "https://calc.renderlog.in",     icon: "/tool-icons/calc.svg" },
+  { name: "PDF",      href: "https://pdf.renderlog.in",      icon: "/tool-icons/pdf.svg" },
+  { name: "Image",    href: "https://image.renderlog.in",    icon: "/tool-icons/image.svg" },
+  { name: "JSON",     href: "https://json.renderlog.in",     icon: "/tool-icons/json.svg" },
+  { name: "Text",     href: "https://text.renderlog.in",     icon: "/tool-icons/text.svg" },
+  { name: "Notepad",  href: "https://notepad.renderlog.in",  icon: "/tool-icons/notepad.svg" },
+  { name: "QR",       href: "https://qr.renderlog.in",       icon: "/tool-icons/qr.svg" },
+  { name: "Renderlog", href: "https://renderlog.in",         icon: "/tool-icons/renderlog.svg" },
 ];
 
 export default function Footer() {
@@ -25,7 +25,14 @@ export default function Footer() {
               rel="noopener noreferrer"
               className={styles.tool}
             >
-              <span className={styles.toolEmoji}>{tool.emoji}</span>
+              <img
+                src={tool.icon}
+                alt=""
+                width={18}
+                height={18}
+                className={styles.toolIcon}
+                aria-hidden
+              />
               <span>{tool.name}</span>
             </a>
           ))}
@@ -35,7 +42,7 @@ export default function Footer() {
           <a href="https://github.com/ashishcumar" target="_blank" rel="noopener noreferrer">
             Ashish Kumar
           </a>{" "}
-          · questify is MIT-licensed open source
+          · Questify (@questify/core) is MIT-licensed open source
         </p>
       </div>
     </footer>

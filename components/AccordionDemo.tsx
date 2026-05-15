@@ -222,7 +222,7 @@ export default function AccordionDemo() {
         <div className={styles.submittedBanner}>
           <strong>🎉 Submitted — only visible responses</strong>
           <p className={styles.submittedNote}>
-            questify pruned hidden-branch answers automatically via{" "}
+            Questify pruned hidden-branch answers automatically via{" "}
             <code>getSubmittableResponses()</code>
           </p>
           <div className={styles.responseList}>

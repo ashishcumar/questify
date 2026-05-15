@@ -68,7 +68,7 @@ function CompletionScreen({
       <div className={styles.completionIcon} aria-hidden="true">✓</div>
       <h2 className={styles.completionTitle}>Application complete</h2>
       <p className={styles.completionSub}>
-        questify collected <strong>{totalAnswered} answers</strong> across{" "}
+        Questify collected <strong>{totalAnswered} answers</strong> across{" "}
         <strong>multiple branches</strong> — only showing questions relevant to your profile.
       </p>
 

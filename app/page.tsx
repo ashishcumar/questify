@@ -32,7 +32,7 @@ const FEATURES = [
   {
     icon: "📦",
     title: "Tree-shakeable",
-    body: "Three separate entry points: questify, questify/react, questify/vue. Import only what you need.",
+    body: "Three separate entry points: @questify/core, @questify/core/react, @questify/core/vue. Import only what you need.",
   },
 ];
 
@@ -209,7 +209,7 @@ export default function HomePage() {
 
           {/* Credibility stats */}
           <div className={styles.statsPills}>
-            <span className={styles.statsPill}>v1.0.0</span>
+            <span className={styles.statsPill}>v1.0.1</span>
             <span className={styles.statsDivider}>·</span>
             <span className={styles.statsPill}>~2 KB gzip</span>
             <span className={styles.statsDivider}>·</span>
@@ -232,7 +232,7 @@ export default function HomePage() {
               GitHub
             </a>
             <a
-              href="https://npmjs.com/package/questify"
+              href="https://www.npmjs.com/package/@questify/core"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.ctaSecondary}
@@ -277,7 +277,7 @@ export default function HomePage() {
       {/* Features */}
       <section className={styles.featuresSection}>
         <div className={styles.sectionInner}>
-          <div className={styles.sectionLabel}>Why questify</div>
+          <div className={styles.sectionLabel}>Why Questify</div>
           <h2 className={styles.sectionTitle}>Built around real pain points</h2>
           <div className={styles.featureGrid}>
             {FEATURES.map((f) => (

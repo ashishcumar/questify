@@ -1,6 +1,6 @@
 {
   "name": "@questify/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Headless, zero-dependency questionnaire engine. Works with React, Vue, Svelte, or vanilla JS.",
   "keywords": [
     "questionnaire",
@@ -42,7 +42,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "assets"
   ],
   "scripts": {
     "build": "tsup",

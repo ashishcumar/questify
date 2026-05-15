@@ -1,8 +1,8 @@
-# questify
+# Questify
 
-**Headless, zero-dependency questionnaire engine.** Works with React, Vue, or plain JavaScript — you own every pixel.
+**Headless, zero-dependency questionnaire engine.** Published on npm as **`@questify/core`**. Works with React, Vue, or plain JavaScript — you own every pixel.
 
-[![npm version](https://img.shields.io/npm/v/%40questify%2Fcore?style=flat-square)](https://npmjs.com/package/@questify/core)
+[![npm version](https://img.shields.io/npm/v/%40questify%2Fcore?style=flat-square)](https://www.npmjs.com/package/@questify/core)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/%40questify%2Fcore?style=flat-square)](https://bundlephobia.com/package/@questify/core)
 [![license](https://img.shields.io/npm/l/%40questify%2Fcore?style=flat-square)](./package/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-blue?style=flat-square)](./package/src)
@@ -11,9 +11,9 @@
 
 ---
 
-## Why questify?
+## Why Questify?
 
-Every questionnaire library either ships its own UI (locked, hard to override) or is tightly coupled to one framework. **questify** is just the state machine — you bring the components.
+Every questionnaire library either ships its own UI (locked, hard to override) or is tightly coupled to one framework. **Questify** (`@questify/core`) is just the state machine — you bring the components.
 
 - Zero runtime dependencies in the core
 - Conditional visibility with `showIf` — nested `and`/`or` trees, arbitrary depth
@@ -28,20 +28,19 @@ Every questionnaire library either ships its own UI (locked, hard to override) o
 ## Repository structure
 
 ```
-questify/
-├── package/          ← npm library source (published to npm as "questify")
+questify/                 ← monorepo root (this GitHub repo)
+├── package/            ← npm library source → publish as @questify/core
 │   ├── src/
-│   │   ├── core/     ← state machine, validation, conditional logic
-│   │   ├── react/    ← useQuestionnaire hook
-│   │   └── vue/      ← useQuestionnaire composable
+│   │   ├── core/       ← state machine, validation, conditional logic
+│   │   ├── react/      ← useQuestionnaire hook
+│   │   └── vue/        ← useQuestionnaire composable
 │   ├── package.json
 │   ├── tsup.config.ts
 │   └── tsconfig.json
 │
-└── demo/             ← Next.js playground (deployed at questify.renderlog.in)
-    ├── app/
-    ├── components/
-    └── lib/          ← inlined library copy for zero-setup playground
+├── app/                  ← Next.js demo site (questify.renderlog.in)
+├── components/
+└── lib/                  ← inlined library copy for zero-setup playground
 ```
 
 ---
@@ -88,7 +87,7 @@ function Survey() {
       <progress value={progress} max={1} />
       <h2>{question.text}</h2>
 
-      {/* render your own inputs — questify does not ship any */}
+      {/* render your own inputs — Questify does not ship any */}
       {question.type === 'text' && (
         <input onChange={(e) => answer(e.target.value)} />
       )}
@@ -387,7 +386,7 @@ import type {
   ShowIfRule,        // = ShowIfCondition | ShowIfCompound
   ConditionOperator,
   DisplayMode,
-} from 'questify';
+} from '@questify/core';
 ```
 
 ---
@@ -407,7 +406,7 @@ await fetch('/api/submit', { method: 'POST', body: JSON.stringify(payload) });
 
 ## Custom renderer pattern (Tailwind, shadcn/ui, MUI, etc.)
 
-questify ships zero CSS. Your renderer is just a function of `(question, value, error, onChange)`:
+Questify ships zero CSS. Your renderer is just a function of `(question, value, error, onChange)`:
 
 ```tsx
 // Works with Tailwind + shadcn/ui
